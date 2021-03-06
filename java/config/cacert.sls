@@ -4,7 +4,7 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import java as j with context %}
 
-{%- if salt.pillar.get('java:cacert') %}
+{%- if salt['pillar.get']('java:cacert') %}
        {%- set sls_archive_install = tplroot ~ '.archive' %}
        {%- set sls_macapp_install = tplroot ~ '.macapp' %}
        {%- set sls_package_install = tplroot ~ '.package' %}
